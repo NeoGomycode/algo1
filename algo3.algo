@@ -1,0 +1,39 @@
+VAR
+  t : INTEGER
+  i : INTEGER
+  j : INTEGER
+  k : INTEGER
+BEGIN
+  j←2
+WHILE (j<=length(t)) DO
+    i←j-1
+    k←t[j]
+END_WHILE
+    WHILE (i>0 AND t[i]>k) DO
+      t[i+1]←k
+      i←i-1
+    END_WHILE
+      t[i+1]←k
+      j←j+1
+END_FOR
+END
+
+ALGORITHM   Tri_with_input
+VAR 
+    i :INTEGER=0
+    j :INTEGER=0
+    T :INTEGER
+
+BEGIN
+FOR i ← 1 TO N - 1  DO
+    temp ← T[i]
+    j ← 1
+    
+
+WHILE (j>0) AND (T[j-1]>temp) DO
+    T[j] ← T[j-1]
+    j ← j-1
+END_WHILE
+T[j] ← temp
+END_FOR
+END
