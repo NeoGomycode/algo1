@@ -1,0 +1,42 @@
+ALGORITHM Some_Tow
+VAR
+ ensemble1 : ARRAY_OF INTEGER;
+  ensemble2: ARRAY_OF INTEGER;
+  test:BOOLEAN=false;
+  i,sommedistinct:INTEGER=0;
+BEGIN
+    ensemble1 :=[5, 3, 7, 9, 1];
+  ensemble2 := [2, 5, 4, 8];
+  FOR i FROM 0 TO ensemble1.length STEP step  DO
+      
+      FOR j FROM 0 TO ensemble2.length STEP step  DO
+          IF (ensemble1[i]=ensemble2[j]) THEN
+              test:=true 
+              break;
+          END_IF
+      END_FOR
+      IF (test:=false) THEN
+          sommedistinct:=sommedistinct+ensemble1[i];
+      END_IF
+      test:=false;
+  END_FOR
+  FOR i FROM 0 TO ensemble2.length STEP step  DO
+      
+      FOR j FROM 0 TO ensemble1.length STEP step  DO
+          IF (ensemble1[i]=ensemble2[j]) THEN
+              test:=true 
+              break;
+          END_IF
+      END_FOR
+      IF (test:=false) THEN
+          sommedistinct:=sommedistinct+ensemble2[i];
+      END_IF
+      test:=false;
+  END_FOR
+  write(sommedistinct)
+END
+ 
+  
+
+	
+ 

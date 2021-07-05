@@ -1,0 +1,26 @@
+ALGORITHM  Lit_Une_Phrase
+VAR
+    i : INTEGER
+    phrase : STRING
+    phrase_c:INTEGER
+    mots = INTEGER=0;
+    Voyel = INTEGER=0;
+    counter :INTEGER= 0
+BEGIN
+    phrase = "My user name is Neon."
+ REPEAT
+     read(phrase)
+ UNTIL (phrase[phrase.length-1]=".")
+   
+    FOR i FROM 0 TO phrase.length-2 STEP 1  DO
+        IF (phrase[counter]=" " ) THEN
+            mots:=mots+1;
+        END_IF
+        SWITCH (phrase[i]) DO
+            case "a","e","i","u","y","A","E","I","U","Y" : Voyel:=Voyel+1;
+        END_SWITCH
+    END_FOR
+   write("nombre de mots :"+ mots+1)
+   write("nombre de voyelles :"+ Voyel)
+   write("nombre de caractéres :"+ phrase[length-2]-mots)
+END
